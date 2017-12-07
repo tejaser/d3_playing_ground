@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>D3 App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.12.0/d3.js"></script>
+  </head>
+  <body>
+    <div id="vizcontainer">
+      <svg style="width:500px;height:500px;border:1px lightgray solid;" />
+    </div>
+    <script type="text/javascript">
+//creating a horizontal line
+    d3
+  .select("svg")
+  .append("line")
+  .attr("x1", 200)
+  .attr("y1", 200)
+  .attr("x2", 200)
+  .attr("y2", 450)
+  .style("stroke", "black")
+  .style("stroke-width", "2px");
+
+  // adding text vai d3
+  d3.select('svg').append('text')
+    .attr('x', 250)
+    .attr('y', 250)
+    .text('this text is generated via d3')
+    .style('color', 'red')
+    .style('font-size', '14px');
+
+    // adding a circle using d3
+    d3.select('svg').append('circle')
+      .attr('cx', 150)
+      .attr('cy', 50)
+      .attr('r', 20)
+      .style('fill', 'yellow')
+      .style('stroke', 'black')
+      .style('stroke-width', '2px');
+
+    // adding another large circle
+    d3.select('svg').append('circle')
+      .attr('cx', 400)
+      .attr('cy', 400)
+      .attr('r', 100)
+      .style('fill', 'lightblue');
+</script>
+  </body>
+</html>
